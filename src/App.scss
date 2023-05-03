@@ -1,0 +1,25 @@
+ion-button {
+  width: 120px;
+}
+
+.vertically-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+ion-item-divider {
+  --background: lightgray;
+
+  min-height: 1px;
+  border: none;
+  margin-left: 16px;
+}
+
+.ion-page-invisible {
+  opacity: 100 !important;
+}
+
+.ion-page-hidden {
+  display: flex !important;
+}
