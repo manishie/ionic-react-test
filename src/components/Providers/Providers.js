@@ -6,15 +6,15 @@ import {
   IonItem,
   IonPage,
   IonRow,
-} from "@ionic/react";
-import React, { Fragment, useContext } from "react";
-import data from "../../dummyData/providers.json";
-import fields from "../../dummyData/providerFields.json";
-import { shuffle } from "lodash";
-import "./Providers.scss";
-import { Link } from "react-router-dom";
-import { AppContext } from "../../state/AppContext";
-import { filter, matches } from "lodash";
+} from '@ionic/react';
+import React, { Fragment, useContext } from 'react';
+import data from '../../dummyData/providers.json';
+import fields from '../../dummyData/providerFields.json';
+import { shuffle } from 'lodash';
+import './Providers.scss';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../../state/AppContext';
+import { filter, matches } from 'lodash';
 
 const Providers = () => {
   let page = 0;
@@ -26,7 +26,7 @@ const Providers = () => {
   for (const property in providerFilters) {
     if (!providerFilters[property]) delete providerFilters[property];
   }
-  console.log("yo");
+  console.log('yo');
   return (
     <Fragment>
       <IonPage id="main-content">
@@ -41,14 +41,14 @@ const Providers = () => {
             {shuffle(filter(data, matches(providerFilters)))
               .slice(page, pageCount)
               .map((row) => (
-                <IonItem key={row.email} routerLink={"/provider/" + row.id}>
+                <IonItem key={row.email} routerLink={'/provider/' + row.id}>
                   <IonImg
                     className="headshot"
-                    src={"/assets/headshots/" + row.image + ".jpg"}
-                    alt={row.firstName + " " + row.lastName}
+                    src="http://placebeard.it/g/200/200"
+                    alt={row.firstName + ' ' + row.lastName}
                   />
                   <div>
-                    <div>{row.firstName + " " + row.lastName}</div>
+                    <div>{row.firstName + ' ' + row.lastName}</div>
                   </div>
                 </IonItem>
               ))}
