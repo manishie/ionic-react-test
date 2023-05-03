@@ -19,42 +19,40 @@ const Provider = () => {
   const row = find(data, (x) => x.id.toString() === routeParams.id);
 
   return (
-    <Fragment>
-      <IonPage id="main-content">
-        <IonContent className="ion-padding" fullscreen>
-          <IonGrid>
-            <IonRow>
-              <IonCol>
-                <h1>{row.firstName + ' ' + row.lastName}</h1>
-              </IonCol>
-            </IonRow>
-            {row && (
-              <>
-                <IonRow>
-                  <IonCol>
-                    <IonImg
-                      className="headshot"
-                      src="http://placebeard.it/g/200/200"
-                      alt={row.firstName + ' ' + row.lastName}
-                    />
-                  </IonCol>
-                </IonRow>
-                {Object.keys(fields).map((field, index) => {
-                  return (
-                    <IonRow key={index}>
-                      <IonCol>
-                        <IonCheckbox disabled checked={row[field]} />
-                        &nbsp;&nbsp;&nbsp;{field}
-                      </IonCol>
-                    </IonRow>
-                  );
-                })}
-              </>
-            )}
-          </IonGrid>
-        </IonContent>
-      </IonPage>
-    </Fragment>
+    <IonPage id="main-content">
+      <IonContent className="ion-padding" fullscreen>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              <h1>{row.firstName + ' ' + row.lastName}</h1>
+            </IonCol>
+          </IonRow>
+          {row && (
+            <>
+              <IonRow>
+                <IonCol>
+                  <IonImg
+                    className="headshot"
+                    src="http://placebeard.it/g/200/200"
+                    alt={row.firstName + ' ' + row.lastName}
+                  />
+                </IonCol>
+              </IonRow>
+              {Object.keys(fields).map((field, index) => {
+                return (
+                  <IonRow key={index}>
+                    <IonCol>
+                      <IonCheckbox disabled checked={row[field]} />
+                      &nbsp;&nbsp;&nbsp;{field}
+                    </IonCol>
+                  </IonRow>
+                );
+              })}
+            </>
+          )}
+        </IonGrid>
+      </IonContent>
+    </IonPage>
   );
 };
 

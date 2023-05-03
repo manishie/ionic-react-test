@@ -26,9 +26,7 @@ const Providers = () => {
   for (const property in providerFilters) {
     if (!providerFilters[property]) delete providerFilters[property];
   }
-  console.log('yo');
   return (
-    <Fragment>
       <IonPage id="main-content">
         <IonContent className="ion-padding" fullscreen>
           <IonGrid>
@@ -44,7 +42,7 @@ const Providers = () => {
                 <IonItem key={row.email} routerLink={'/provider/' + row.id}>
                   <IonImg
                     className="headshot"
-                    src="http://placebeard.it/g/200/200"
+                    src="https://loremflickr.com/200/200"
                     alt={row.firstName + ' ' + row.lastName}
                   />
                   <div>
@@ -55,7 +53,6 @@ const Providers = () => {
           </IonGrid>
         </IonContent>
       </IonPage>
-    </Fragment>
   );
 };
 
