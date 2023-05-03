@@ -6,13 +6,13 @@ import {
   IonImg,
   IonPage,
   IonRow,
-} from "@ionic/react";
-import React, { Fragment } from "react";
-import data from "../../dummyData/providers.json";
-import fields from "../../dummyData/providerFields.json";
-import { find } from "lodash";
-import "./Provider.scss";
-import { useParams } from "react-router-dom";
+} from '@ionic/react';
+import React, { Fragment } from 'react';
+import data from '../../dummyData/providers.json';
+import fields from '../../dummyData/providerFields.json';
+import { find } from 'lodash';
+import './Provider.scss';
+import { useParams } from 'react-router-dom';
 
 const Provider = () => {
   const routeParams = useParams();
@@ -25,7 +25,7 @@ const Provider = () => {
           <IonGrid>
             <IonRow>
               <IonCol>
-                <h1>{row.firstName + " " + row.lastName}</h1>
+                <h1>{row.firstName + ' ' + row.lastName}</h1>
               </IonCol>
             </IonRow>
             {row && (
@@ -34,8 +34,8 @@ const Provider = () => {
                   <IonCol>
                     <IonImg
                       className="headshot"
-                      src={"/assets/headshots/" + row.image + ".jpg"}
-                      alt={row.firstName + " " + row.lastName}
+                      src="http://placebeard.it/g/200/200"
+                      alt={row.firstName + ' ' + row.lastName}
                     />
                   </IonCol>
                 </IonRow>
